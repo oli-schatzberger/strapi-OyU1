@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guidances",
+  "info": {
+    "singularName": "guidance",
+    "pluralName": "guidances",
+    "displayName": "Guidance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tools": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

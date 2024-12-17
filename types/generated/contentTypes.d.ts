@@ -362,28 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBikeBike extends Schema.CollectionType {
-  collectionName: 'bikes';
-  info: {
-    singularName: 'bike';
-    pluralName: 'bikes';
-    displayName: 'bike';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    text: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::bike.bike', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::bike.bike', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -810,6 +788,66 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBikeBike extends Schema.CollectionType {
+  collectionName: 'bikes';
+  info: {
+    singularName: 'bike';
+    pluralName: 'bikes';
+    displayName: 'bike';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    model: Attribute.String & Attribute.Required & Attribute.Unique;
+    company: Attribute.Enumeration<
+      ['KTM', 'GASGAS', 'HUSQVARNA', 'CFMOTO', 'MVAUGUSTA']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::bike.bike', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::bike.bike', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGuidanceGuidance extends Schema.CollectionType {
+  collectionName: 'guidances';
+  info: {
+    singularName: 'guidance';
+    pluralName: 'guidances';
+    displayName: 'Guidance';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    tools: Attribute.String;
+    description: Attribute.Blocks;
+    video: Attribute.Media;
+    gallery: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::guidance.guidance',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::guidance.guidance',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -820,7 +858,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::bike.bike': ApiBikeBike;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -829,6 +866,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::bike.bike': ApiBikeBike;
+      'api::guidance.guidance': ApiGuidanceGuidance;
     }
   }
 }
