@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bikes",
+  "info": {
+    "singularName": "bike",
+    "pluralName": "bikes",
+    "displayName": "bike"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}
