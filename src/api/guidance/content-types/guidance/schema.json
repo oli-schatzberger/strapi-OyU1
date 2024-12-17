@@ -4,7 +4,8 @@
   "info": {
     "singularName": "guidance",
     "pluralName": "guidances",
-    "displayName": "Guidance"
+    "displayName": "Guidance",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,22 +20,24 @@
     "tools": {
       "type": "string"
     },
-    "description": {
-      "type": "blocks"
-    },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

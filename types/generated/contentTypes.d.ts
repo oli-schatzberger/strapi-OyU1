@@ -820,6 +820,7 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
     singularName: 'guidance';
     pluralName: 'guidances';
     displayName: 'Guidance';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -827,9 +828,9 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     tools: Attribute.String;
-    description: Attribute.Blocks;
     video: Attribute.Media;
     gallery: Attribute.Media;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
