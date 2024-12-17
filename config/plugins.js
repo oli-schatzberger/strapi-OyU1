@@ -1,21 +1,18 @@
+const path = require('path');
+
 module.exports = ({ env }) => ({
-  'users-permissions': {
-    config: {
-      jwtSecret: env('JWT_SECRET'),
-    },
-  },
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: 'local',
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        sizeLimit: 100000000,  // Max. Dateigröße
       },
       actionOptions: {
         upload: {},
         delete: {},
       },
     },
+    // Custom Verzeichnis für Railway
+    folderPath: path.join('/mnt/data/uploads'),
   },
 });
