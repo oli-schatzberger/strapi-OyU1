@@ -26,6 +26,18 @@
         "CFMOTO",
         "MVAUGUSTA"
       ]
+    },
+    "modelId": {
+      "type": "biginteger",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

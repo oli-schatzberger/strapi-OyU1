@@ -804,6 +804,8 @@ export interface ApiBikeBike extends Schema.CollectionType {
     company: Attribute.Enumeration<
       ['KTM', 'GASGAS', 'HUSQVARNA', 'CFMOTO', 'MVAUGUSTA']
     >;
+    modelId: Attribute.BigInteger & Attribute.Required;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
