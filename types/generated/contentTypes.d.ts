@@ -793,7 +793,7 @@ export interface ApiBikeBike extends Schema.CollectionType {
   info: {
     singularName: 'bike';
     pluralName: 'bikes';
-    displayName: 'bike';
+    displayName: 'Bike';
     description: '';
   };
   options: {
@@ -833,6 +833,8 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
     video: Attribute.Media;
     gallery: Attribute.Media;
     description: Attribute.Text;
+    Steps: Attribute.Component<'steps.step', true>;
+    conclusion: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

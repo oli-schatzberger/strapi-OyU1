@@ -38,6 +38,15 @@
     },
     "description": {
       "type": "text"
+    },
+    "Steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "steps.step"
+    },
+    "conclusion": {
+      "type": "text",
+      "required": false
     }
   }
 }
