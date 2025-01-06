@@ -25,7 +25,8 @@
         "HUSQVARNA",
         "CFMOTO",
         "MVAUGUSTA"
-      ]
+      ],
+      "required": true
     },
     "modelId": {
       "type": "biginteger",
@@ -34,7 +35,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]

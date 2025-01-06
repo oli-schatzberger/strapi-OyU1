@@ -803,9 +803,10 @@ export interface ApiBikeBike extends Schema.CollectionType {
     model: Attribute.String & Attribute.Required & Attribute.Unique;
     company: Attribute.Enumeration<
       ['KTM', 'GASGAS', 'HUSQVARNA', 'CFMOTO', 'MVAUGUSTA']
-    >;
+    > &
+      Attribute.Required;
     modelId: Attribute.BigInteger & Attribute.Required;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -829,10 +830,10 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    tools: Attribute.String;
+    tools: Attribute.String & Attribute.Required;
     video: Attribute.Media;
-    gallery: Attribute.Media;
-    description: Attribute.Text;
+    headerImg: Attribute.Media & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
     Steps: Attribute.Component<'steps.step', true>;
     conclusion: Attribute.Text;
     createdAt: Attribute.DateTime;
