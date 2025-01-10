@@ -39,6 +39,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "productionYear": {
+      "type": "integer"
     }
   }
 }

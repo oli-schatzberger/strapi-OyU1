@@ -807,6 +807,7 @@ export interface ApiBikeBike extends Schema.CollectionType {
       Attribute.Required;
     modelId: Attribute.BigInteger & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
+    productionYear: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -836,6 +837,7 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     Steps: Attribute.Component<'steps.step', true>;
     conclusion: Attribute.Text;
+    interval: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
