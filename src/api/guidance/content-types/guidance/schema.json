@@ -53,6 +53,12 @@
     "interval": {
       "type": "integer",
       "required": true
+    },
+    "bikes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bike.bike",
+      "inversedBy": "guidances"
     }
   }
 }

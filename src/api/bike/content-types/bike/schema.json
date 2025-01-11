@@ -42,6 +42,12 @@
     },
     "productionYear": {
       "type": "integer"
+    },
+    "guidances": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::guidance.guidance",
+      "mappedBy": "bikes"
     }
   }
 }

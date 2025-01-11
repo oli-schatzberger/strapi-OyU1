@@ -808,6 +808,11 @@ export interface ApiBikeBike extends Schema.CollectionType {
     modelId: Attribute.BigInteger & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     productionYear: Attribute.Integer;
+    guidances: Attribute.Relation<
+      'api::bike.bike',
+      'manyToMany',
+      'api::guidance.guidance'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -838,6 +843,11 @@ export interface ApiGuidanceGuidance extends Schema.CollectionType {
     Steps: Attribute.Component<'steps.step', true>;
     conclusion: Attribute.Text;
     interval: Attribute.Integer & Attribute.Required;
+    bikes: Attribute.Relation<
+      'api::guidance.guidance',
+      'manyToMany',
+      'api::bike.bike'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
